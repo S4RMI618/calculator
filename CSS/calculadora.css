@@ -65,25 +65,48 @@ button:focus {
 }
 
 .screen {
-    background-color: #000000;
+    background: #18171c;
+    padding: 1rem;
     grid-column: 1/5;
     border-radius: .75rem;
-    height: 10rem;
+    height: 6rem;
     color: white;
+    font-size: 2rem;
+}
+
+::placeholder{
+    color:white;
 }
 
 .var {
     grid-column: 1/5;
 }
 
-.symbol {
-    background-color: #1b004b;
+.symbol,
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     color: white;
     font-size: 2rem;
-    border-radius: 20rem;
-    height: 4.3rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: .15 ease;
 }
 
+.symbol{
+    background: #1b004b;;
+}
 .symbol:hover {
-    background-color: #474b4e;
+    background-color: #2c0077;
+    transition: 0.3s ease-in-out all;
+}
+
+.number{
+    background: #18171c;
+}
+
+.number:hover{
+    background: #232229;
 }
