@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #79b7ff;
+}
+
+.digital-clock{
+    position: relative;
+    color: #fff;
+    background: #2d2f41;
+    max-width: 100vh;
+    max-height: 50 vh;
+    padding: 5vh 60px;
+    box-shadow: 0 5px 25px rgba(14, 21, 37, 0.8);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.time {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hours, .dots, .minutes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    padding: 0 10px;
+    line-height: 125px;
+}
+
+.hours, .minutes {
+    font-size: 6.5em;
+    width: 125px;
+}
+
+.dots{
+    font: 7rem;
+    color: #929292;
+}
+
+.hours{
+    background: -webkit-linear-gradient(180deg, #72f3ff, #00ffcc);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.minutes{
+    background: -webkit-linear-gradient(180deg, #e5ff00, #00ffd9);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.right-side{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.period, .seconds {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.period{
+    transform: translateY(-20px);
+    background: -webkit-linear-gradient(90deg, #5BF0D7, #FF4800);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.seconds {
+    transform: translateY(16px);
+    background: -webkit-linear-gradient(90deg, #24ff6d, #2f93f1);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.calendar{
+    display: flex;
+    align-items: center;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 5px;
+    background: -webkit-linear-gradient(90deg, #ae4af6, #ff98d1);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    justify-content: space-around;
+}
+
+.day-name, .day-number, .year{
+    margin-left: 8px;
+}
+
+.botones {
+    margin: 1vh;
+    padding: 1vh;
+}
+
+.nameCronometro {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.botones{
+    2
+}
+
+@media screen and (max-width: 400px) {
+    .digital-clock{
+        position: relative;
+        color: #fff;
+        background: #2d2f41;
+        margin: 1vh;
+        max-width: 50vh;
+        height: 70vh;
+        padding: 10px 30px;
+        box-shadow: 0 5px 25px rgba(14, 21, 37, 0.8);
+        border-radius: 20px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .calendar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3em;
+        font-weight: 500;
+        margin-bottom: 5px;
+        background: -webkit-linear-gradient(120deg, #95F05B, #EB5BF0);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+}
