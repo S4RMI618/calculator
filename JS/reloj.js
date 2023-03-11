@@ -14,7 +14,11 @@ function clock(){
     }
 
     //Set the 12-hour clock format
+    var formatValue = formatSwitchBtn.getAttribute("data-format");
+
+    if(formatValue === "12"){
     hours = hours > 12 ? hours % 12 : hours;
+    }
 
     //Add the 0 for the values lower than 10
     if(hours < 10){
@@ -36,4 +40,17 @@ function clock(){
     document.querySelector(".period").innerHTML = period;
 }
 
-var updateClock = setInterval(clock, 1000);
+var updateClock = setInterval(clock, 1000);
+
+//Get the date in JavaScript
+
+var today = new Date();
+const dayNumber = today.getDate();
+const year = today.getFullYear();
+const dayName = today.toLocaleDateString("default", {weekday: "long"});
+const monthName = today.toLocaleDateString("default", {month: "short"});
+
+document.querySelector(".month-name").innerHTML = monthName;
+document.querySelector(".day-name").innerHTML = dayName;
+document.querySelector(".day-number").innerHTML = dayNumber;
+document.querySelector(".year").innerHTML = year;

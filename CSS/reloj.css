@@ -115,16 +115,57 @@ body{
 .botones {
     margin: 1vh;
     padding: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .nameCronometro {
     font-size: 1.3em;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 5px;
+    text-align: center;
+    background: -webkit-linear-gradient(90deg, #ae4af6, #ff98d1);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
-.botones{
-    2
+.cronometro{
+    margin: 0 auto;
+    width:200px;
+    height:100px;
+    display: flex;
+    text-align:center;
+    justify-content: center ;
+} 
+.boton{
+    display:inline-block;
+    width:32px;height:32px;
+    position:relative;
+}
+#hms{
+    height:68px;
+    padding:5px 0;
+    font-size:50px;
+    color:#000;
+    font-family: alarm;  
+ }
+
+.btnCrono {
+    width: 10vh;
+    margin: 1vh;
+    padding: 0.8vh;
+    border: none;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 7rem;
+    background: -webkit-linear-gradient(90deg, #ae4af6, #ff98d1);   
+}
+
+.btnCrono:hover{
+    background: -webkit-linear-gradient(90deg,  #a300d5 , #ff8080); 
+    color: black;
 }
 
 @media screen and (max-width: 400px) {

@@ -27,15 +27,16 @@
             </div>
         </div>
         <div class="botones">
-            <div class="cronometro">
-                <span class="hcrono">00</span>
-                <span class="pcrono">:</span>
-                <span class="mcrono">00</span>
-            </div>
             <h2 class="nameCronometro">Cronómetro</h2>
-            <br>
-            <input type="button" id="iniciar"  class="btnCrono" value="Iniciar">
-            <input type="button" id="reiniciar"  class="btnCrono" value="Reiniciar">
+            <div class="cronometro">
+                <div id="hms"></div>
+                <div class="boton start"></div>        
+                <div class="boton stop"></div>
+                <div class="boton reiniciar"></div>
+            
+                <button class="btnCrono" onclick="init();">Iniciar</button>
+                <button class="btnCrono" onclick="reboot();">Reiniciar</button>
+            </div>
         </div>
     </div>
 
