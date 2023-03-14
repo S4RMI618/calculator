@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="../CSS/reloj.css">
+    <link rel="stylesheet" href="Temporizador/t.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <title>reloj</title>
+    <title>Digital Clock</title>
 </head>
 <body>
-    
-    <div class="digital-clock">
-        <div class="calendar">
-            <span class="month-name">Mar</span>,
-            <span class="day-name">Friday</span>
-            <span class="day-number">10</span>
-            <span class="year">2022</span>
-        </div>
+    <ul>
+        <li style="--clr:#00ade1">
+            <a href="" data-text="&nbsp;Inicio">&nbsp;Inicio&nbsp;</a>
+        </li>
+     </ul>
+    <div class="reloj">
         <div class="time">
             <span class="hours">00</span>
             <span class="dots">:</span>
@@ -26,20 +26,16 @@
                 <span class="seconds">00</span>
             </div>
         </div>
-        <div class="botones">
-            <h2 class="nameCronometro">Cronómetro</h2>
-            <div class="cronometro">
-                <div id="hms"></div>
-                <div class="boton start"></div>        
-                <div class="boton stop"></div>
-                <div class="boton reiniciar"></div>
-            
-                <button class="btnCrono" onclick="init();">Iniciar</button>
-                <button class="btnCrono" onclick="reboot();">Reiniciar</button>
-            </div>
+        <div class="calendar">
+            <span class="month-name">Month</span>,
+            <span class="day-name">Day</span>
+            <span class="day-number">00</span>
+            <span class="year">0000</span>
         </div>
     </div>
 
 </body>
 <script src="../JS/reloj.js"></script>
+<script src="Cronometer.js"></script>
+<script src="Temporizador/t.js"></script>
 </html>

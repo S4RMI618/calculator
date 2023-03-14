@@ -1,3 +1,19 @@
+//JavaScript for swith clock format
+
+const formatSwitchBtn = document.querySelector(".format-switch-btn");
+
+formatSwitchBtn.addEventListener("click", () => {
+    formatSwitchBtn.classList.toggle("active");
+
+    var formatValue = formatSwitchBtn.getAttribute("data-format");
+    if (formatValue === "12"){
+        formatSwitchBtn.setAttribute("data-format", "24");
+    } 
+    else {
+        formatSwitchBtn.setAttribute("data-format", "12");
+    }
+})
+
 //Get current time in JavaScript
 
 function clock(){
@@ -48,7 +64,7 @@ var today = new Date();
 const dayNumber = today.getDate();
 const year = today.getFullYear();
 const dayName = today.toLocaleDateString("default", {weekday: "long"});
-const monthName = today.toLocaleDateString("default", {month: "short"});
+const monthName = today.toLocaleDateString("default", {month: "long"});
 
 document.querySelector(".month-name").innerHTML = monthName;
 document.querySelector(".day-name").innerHTML = dayName;

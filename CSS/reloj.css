@@ -12,22 +12,48 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #79b7ff;
+    background: #2e2e44;
 }
 
-.digital-clock{
+.reloj{
     position: relative;
     color: #fff;
     background: #2d2f41;
-    max-width: 100vh;
-    max-height: 50 vh;
-    padding: 5vh 60px;
+    width: 425px;
+    padding: 20px 45px;
     box-shadow: 0 5px 25px rgba(14, 21, 37, 0.8);
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.reloj:before{
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg, #24ff6d, #2f93f1, #ff5e9a);
+    background-size: 200% 200%;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    z-index: -1;
+    filter: blur(40px);
+    animation: glowing 8s ease infinite;
+}
+
+@keyframes glowing{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+    
 }
 
 .time {
@@ -41,9 +67,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
+    font-weight: 500;
     padding: 0 10px;
-    line-height: 125px;
+    line-height: 12rem;
 }
 
 .hours, .minutes {
@@ -52,18 +78,18 @@ body{
 }
 
 .dots{
-    font: 7rem;
-    color: #929292;
+    font: 10rem;
+    color: #ffffff;
 }
 
 .hours{
-    background: -webkit-linear-gradient(180deg, #72f3ff, #00ffcc);
+    background: -webkit-linear-gradient(300deg, #3a20ff, #74daff);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
 
 .minutes{
-    background: -webkit-linear-gradient(180deg, #e5ff00, #00ffd9);
+    background: -webkit-linear-gradient(300deg, #3dff7b, #f4ff8f);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
@@ -84,7 +110,7 @@ body{
 
 .period{
     transform: translateY(-20px);
-    background: -webkit-linear-gradient(90deg, #5BF0D7, #FF4800);
+    background: -webkit-linear-gradient(90deg, #f7b63f, #faf879);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
@@ -98,6 +124,7 @@ body{
 
 .calendar{
     display: flex;
+    justify-content: center;
     align-items: center;
     font-size: 1.3em;
     font-weight: 500;
@@ -105,95 +132,83 @@ body{
     background: -webkit-linear-gradient(90deg, #ae4af6, #ff98d1);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    justify-content: space-around;
 }
 
 .day-name, .day-number, .year{
-    margin-left: 8px;
+    margin-left: 8px;
 }
 
-.botones {
-    margin: 1vh;
-    padding: 1vh;
+.dot-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    color: #efefef;
+    font-size: 1.5m;
+    cursor: pointer;
+}
+
+.dot-menu {
+    z-index: 999;
+    position: absolute;
+    top: 7px;
+    right: 5px; 
+    list-style: none;
+    background: #353e54;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.dot-menu.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.menu-item {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
 }
 
-.nameCronometro {
-    font-size: 1.3em;
-    font-weight: 600;
-    margin-bottom: 5px;
-    text-align: center;
-    background: -webkit-linear-gradient(90deg, #ae4af6, #ff98d1);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+.clock-format-text {
+    color: #efefef;
+    font-size: 0.9em;
+    margin-right: 20px;
 }
 
-.cronometro{
-    margin: 0 auto;
-    width:200px;
-    height:100px;
+.format-switch-btn {
+    width: 35px;
+    height: 15px;
+    background: #485470;
+    border-radius: 75px;
+    box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+                inset -2px -2px -4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
     display: flex;
-    text-align:center;
-    justify-content: center ;
-} 
-.boton{
-    display:inline-block;
-    width:32px;height:32px;
-    position:relative;
-}
-#hms{
-    height:68px;
-    padding:5px 0;
-    font-size:50px;
-    color:#000;
-    font-family: alarm;  
- }
-
-.btnCrono {
-    width: 10vh;
-    margin: 1vh;
-    padding: 0.8vh;
-    border: none;
-    text-align: center;
-    font-weight: 700;
-    border-radius: 7rem;
-    background: -webkit-linear-gradient(90deg, #ae4af6, #ff98d1);   
+    justify-content: center;
+    align-items: center;
 }
 
-.btnCrono:hover{
-    background: -webkit-linear-gradient(90deg,  #a300d5 , #ff8080); 
-    color: black;
+.format-switch-btn:before{
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #ff5e9a;
+    border-radius: 50%;
+    box-shadow: 0 5px 25px #ff5e9a;
+    transform: translateX(-10px);
+    transition: 0.3s ease;
+    transition-property: background, transform;
 }
 
-@media screen and (max-width: 400px) {
-    .digital-clock{
-        position: relative;
-        color: #fff;
-        background: #2d2f41;
-        margin: 1vh;
-        max-width: 50vh;
-        height: 70vh;
-        padding: 10px 30px;
-        box-shadow: 0 5px 25px rgba(14, 21, 37, 0.8);
-        border-radius: 20px;
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .calendar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.3em;
-        font-weight: 500;
-        margin-bottom: 5px;
-        background: -webkit-linear-gradient(120deg, #95F05B, #EB5BF0);
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-    }
+.format-switch-btn.active:before{
+    background: #0bff8d;
+    box-shadow: 0 5px 25px #0bff8d;
+    transform: translateX(10px);
 }
