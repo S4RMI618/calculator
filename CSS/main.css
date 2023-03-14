@@ -17,10 +17,15 @@ ul {
     position: relative;
     display: flex;
     flex-direction: column;
+    margin-right: 6rem;
 }
 ul li {
     position: relative;
     list-style: none;
+}
+
+li {
+    margin-bottom: 8px;
 }
 
 ul li a {

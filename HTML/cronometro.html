@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/reloj.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/unit.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Cronómetro</title>
+</head>
+<body>
+    <ul>
+        <li style="--clr:#00ade1">
+            <a href="../HTML/reloj.html" data-text="&nbsp;Reloj">&nbsp;Reloj&nbsp;</a>
+        </li>
+        <li style="--clr:#A21FF5">
+            <a href="../HTML/temporizador.html" data-text="&nbsp;Temporizador">&nbsp;Temporizador&nbsp;</a>
+        </li>
+     </ul>
+     <!--Cronometer-->
+     <div class="reloj" id="reloj">
+         <div class="number-count">
+             <div class="r" id="Horas">00</div>
+             <div class="r" id="Minutos">:00</div>
+             <div class="r" id="Segundos">:00</div>
+             <div class="r" id="Centesimas">:00</div>
+         </div>
+         <div class="buttons-cronometer">
+             <input type="button" class="boton" id="inicio" value="Start &#9658;" onclick="inicio();">
+             <input type="button" class="boton" id="parar" value="Stop &#8718;" onclick="parar();" disabled>
+             <input type="button" class="boton" id="continuar" value="Resume &#8634;" onclick="inicio();" disabled>
+             <input type="button" class="boton" id="reinicio" value="Reset &#8635;" onclick="reinicio();" disabled>
+         </div>
+     </div>
+
+</body>
+<script src="../JS/cronometro.js"></script>
+</html>
